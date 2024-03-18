@@ -86,10 +86,21 @@ These are the basic steps for Apache NiFi:
   2. Follow the basic Apache NiFi setup and installation instructions as found
      in their documentation.
 
-  2. Install the PostgreSQL JDBC driver into the Apache NiFi `lib` directory.
+  3. In the `conf/nifi.properties` file, set the `nifi.sensitive.props.key`
+     value to: `muse.totally.insecure.password.demo.use.only`. Once done that
+     entry should read:
 
-  3. Copy the `flow.json.gz` file in this repository to the Apache NiFi `conf`
+     `nifi.sensitive.props.key=muse.totally.insecure.password.demo.use.only`
+
+  3. Install the PostgreSQL JDBC driver into the Apache NiFi `lib` directory.
+
+  4. Copy the `flow.json.gz` file in this repository to the Apache NiFi `conf`
      directory.
+
+  5. Start Apache Nifi and log in.
+
+  6. Set the `DBCPConnectionPool` controller service's database username and
+     password properties to values appropriate for your database server.
 
 Once this is done the demonstration should be ready to run using the Apache
 NiFi user interface.
